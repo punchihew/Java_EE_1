@@ -32,4 +32,6 @@ public class Hello_Servelet extends HttpServlet {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
         resp.getWriter().println("HTTP Delete   method");
     }
+
+
 }
