@@ -18,4 +18,10 @@ public class Hello_Servelet extends HttpServlet {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
         resp.getWriter().println("HTTP Pos   method");
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
+        resp.getWriter().println("HTTP Put   method");
+    }
 }
