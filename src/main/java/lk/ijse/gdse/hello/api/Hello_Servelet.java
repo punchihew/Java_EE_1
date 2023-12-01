@@ -10,12 +10,14 @@ public class Hello_Servelet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
+        System.out.println("GET");
         resp.getWriter().println("HTTP get method");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
+        System.out.println("POST");
         resp.getWriter().println("HTTP Pos   method");
     }
 
@@ -23,5 +25,11 @@ public class Hello_Servelet extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
         resp.getWriter().println("HTTP Put   method");
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
+        resp.getWriter().println("HTTP Delete   method");
     }
 }
