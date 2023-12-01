@@ -10,6 +10,12 @@ public class Hello_Servelet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
-        resp.getWriter().println("Hello I From the Hello Server 1");
+        resp.getWriter().println("HTTP get method");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
+        resp.getWriter().println("HTTP Pos   method");
     }
 }
