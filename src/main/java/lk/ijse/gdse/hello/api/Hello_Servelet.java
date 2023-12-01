@@ -17,7 +17,7 @@ public class Hello_Servelet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Incoming request: Hello Servlet" +req.getRemoteAddr());
-        System.out.println("POST");
+        resp.getWriter().println("HTTP POS !!");
         resp.getWriter().println("HTTP Pos   method");
     }
 
