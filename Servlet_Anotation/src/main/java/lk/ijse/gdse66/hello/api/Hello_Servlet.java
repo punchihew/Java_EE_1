@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Hello_Servlet" , value = "/")
+@WebServlet(name = "Hello_Servlet" , value = "/" , loadOnStartup = 1)
 public class  Hello_Servlet extends HttpServlet {
 
     @Override
