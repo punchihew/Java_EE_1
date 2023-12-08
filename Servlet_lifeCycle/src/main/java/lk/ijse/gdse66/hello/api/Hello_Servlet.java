@@ -8,6 +8,10 @@ import java.io.IOException;
 
 public class Hello_Servlet  extends HttpServlet {
 
+    static{
+        System.out.println("Servlet is being initialized");
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("Hello Servlet 1");
