@@ -10,35 +10,35 @@ import java.io.IOException;
 
 public class Hello_Servlet  extends HttpServlet {
 
-    static{
-        System.out.println("Servlet is being initialized");
-    }
-    public Hello_Servlet(){
-        System.out.println("Servlet(): Constructomer ");
-    }
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        System.out.println("init(ServletConfig)");
-        super.init(config);
-    }
+//    static{
+//        System.out.println("Servlet is being initialized");
+//    }
+//    public Hello_Servlet(){
+//        System.out.println("Servlet(): Constructomer ");
+//    }
+//
+//    @Override
+//    public void init(ServletConfig config) throws ServletException {
+//        System.out.println("init(ServletConfig)");
+//        super.init(config);
+//    }
 
     @Override
     public void init() throws ServletException {
-        System.out.println("int()");
+        System.out.println(" Servlet int()");
         super.init();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("Hello Servlet 1");
-        System.out.println("doget");
+        System.out.println("Servlet doget");
 
     }
 
-    @Override
-    public void destroy() {
-        System.out.println("Servelt is about destroy");
-//        super.destroy();
+//    @Override
+//    public void destroy() {
+//        System.out.println("Servelt is about destroy");
+////        super.destroy();
     }
-}
+
