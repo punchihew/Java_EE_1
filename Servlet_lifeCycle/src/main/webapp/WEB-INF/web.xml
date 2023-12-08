@@ -20,6 +20,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Hello_Servlet_2</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/txt</url-pattern>
     </servlet-mapping>
 </web-app>
