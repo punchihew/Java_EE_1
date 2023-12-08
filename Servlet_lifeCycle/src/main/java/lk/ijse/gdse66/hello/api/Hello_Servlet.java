@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.hello.api;
 
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,9 @@ public class Hello_Servlet  extends HttpServlet {
 
     static{
         System.out.println("Servlet is being initialized");
+    }
+    public Servlet{
+        System.out.println("Servlet(): Constructomer ");
     }
 
     @Override
