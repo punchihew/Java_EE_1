@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.hello.api;
 
 import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,12 @@ public class Hello_Servlet  extends HttpServlet {
     }
     public Hello_Servlet(){
         System.out.println("Servlet(): Constructomer ");
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        System.out.println("initServlet");
+        super.init(config);
     }
 
     @Override
