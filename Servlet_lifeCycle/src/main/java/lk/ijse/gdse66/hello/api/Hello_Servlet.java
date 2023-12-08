@@ -19,20 +19,20 @@ public class Hello_Servlet  extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("initServletConfig");
+        System.out.println("init(ServletConfig)");
         super.init(config);
     }
 
     @Override
     public void init() throws ServletException {
         System.out.println("int()");
-//        super.init();
+        super.init();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("Hello Servlet 1");
-        System.out.println("Hello");
+        System.out.println("doget");
 
     }
 
