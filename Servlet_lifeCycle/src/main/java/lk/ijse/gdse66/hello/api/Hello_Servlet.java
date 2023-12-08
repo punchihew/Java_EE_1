@@ -35,4 +35,10 @@ public class Hello_Servlet  extends HttpServlet {
         System.out.println("Hello");
 
     }
+
+    @Override
+    public void destroy() {
+        System.out.println("Servelt is about destroy");
+//        super.destroy();
+    }
 }
