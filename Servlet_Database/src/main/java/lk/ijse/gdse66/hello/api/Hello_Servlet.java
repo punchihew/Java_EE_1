@@ -45,7 +45,8 @@ public class  Hello_Servlet extends HttpServlet {
             String name = req.getParameter("name");
             String address = req.getParameter("address");
 
-            
+            System.out.printf("id=%s, name=%s, address=%s\n",id,name,address);
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             DriverManager.getConnection(url,username,password);
 //            PreparedStatement stn = connection.prepareStatement("INSERT INTO customer(id,name,address) VALUES (?,?,?)");
