@@ -12,7 +12,7 @@ public class Hello_Servlet  extends HttpServlet {
     static{
         System.out.println("Servlet is being initialized");
     }
-    public Servlet{
+    public Hello_Servlet(){
         System.out.println("Servlet(): Constructomer ");
     }
 
