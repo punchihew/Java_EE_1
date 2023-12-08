@@ -19,8 +19,14 @@ public class Hello_Servlet  extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("initServlet");
+        System.out.println("initServletConfig");
         super.init(config);
+    }
+
+    @Override
+    public void init() throws ServletException {
+        System.out.println("int()");
+//        super.init();
     }
 
     @Override
