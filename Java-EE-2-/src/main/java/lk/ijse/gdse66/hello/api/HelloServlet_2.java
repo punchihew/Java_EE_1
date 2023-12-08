@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.hello.api;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,5 +17,10 @@ public class HelloServlet_2 extends HttpServlet {
         String punchihewa = src1.getInitParameter("Punchihewa");
         System.out.println("Servlet..2");
         System.out.println(punchihewa);
+
+
+        ServletContext txt = getServletContext();
+        String name = txt.getInitParameter("city");
+        System.out.println(name);
     }
 }

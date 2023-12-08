@@ -4,10 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-<context-param>
-    <param-name>city</param-name>
-    <param-value>colombo</param-value>
-</context-param>
+
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
@@ -35,4 +32,10 @@
         <servlet-name>HelloServlet_2</servlet-name>
         <url-pattern>/test2</url-pattern>
     </servlet-mapping>
+
+
+    <context-param>
+        <param-name>city</param-name>
+        <param-value>colombo</param-value>
+    </context-param>
 </web-app>
