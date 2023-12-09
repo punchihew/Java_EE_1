@@ -8,13 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 //using annotation web app
-@WebServlet(name = "Hello_Servlet" , value = "MyServlet" ,loadOnStartup = 1 )
+@WebServlet(name = "Hello_Servlet" , value = "/" ,loadOnStartup = 1 , initParams = {
+         
+})
 
 public class Hello_Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    
+        System.out.println("Doget");
 
     }
 }
