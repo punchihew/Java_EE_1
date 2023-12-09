@@ -29,10 +29,12 @@ public class  Hello_Servlet extends HttpServlet {
     //connecting eka hadagena dunne attrubete wala vallue eka illgannwa
     @Override
     public void init() throws ServletException {
+
         ServletConfig sc = getServletConfig();
+
         String username = sc.getInitParameter("username");
         String password = sc.getInitParameter("password");
-        String url = sc.getInitParameter("url");
+        String address = sc.getInitParameter("url");
 
 
     }
@@ -57,9 +59,9 @@ public class  Hello_Servlet extends HttpServlet {
             connection =   DriverManager.getConnection("jdbc:mysql://localhost:3306/gdse66_hello","root","1234");
             PreparedStatement stn = connection.prepareStatement("INSERT INTO customer(id,name,address) VALUES (?,?,?)");
 
-            stn.setString(1,id);
-            stn.setString(2,name);
-            stn.setString(3,address);
+                stn.setString(1,id);
+                stn.setString(2,name);
+                stn.setString(3,address);
 
             stn.executeUpdate();
 
