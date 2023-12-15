@@ -105,5 +105,11 @@ public class  Hello_Servlet extends HttpServlet {
             }
         }
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        
+    }
 }
 
