@@ -116,6 +116,21 @@ public class  Hello_Servlet extends HttpServlet {
 
         System.out.printf("id=%s, name=%s, address=%s\n", id, name, address);
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection =   DriverManager.getConnection("jdbc:mysql://localhost:3306/gdse66_hello","root","1234");
+            PreparedStatement stn = connection.prepareStatement(" UPDATE customer SET name=?,address=? WHERE id=?");
+
+
+            stn.setString(1,name);
+            stn.setString(2,address);
+            stn.setString(3,id);
+
+            stn.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 
