@@ -109,7 +109,13 @@ public class  Hello_Servlet extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        
+        Connection connection = null;
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
+        String address = req.getParameter("address");
+
+        System.out.printf("id=%s, name=%s, address=%s\n", id, name, address);
+
     }
 }
 
