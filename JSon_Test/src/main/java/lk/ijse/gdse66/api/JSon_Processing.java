@@ -108,7 +108,7 @@ import java.sql.*;
             stn.setString(3,address);
 
 
-            if(stn.executeUpdate()>0){
+            if(stn.executeUpdate() != 0){
                 resp.getWriter().write("Customer Save Successfull");
             }{
                 resp.getWriter().write("Fail To Save Customer");
