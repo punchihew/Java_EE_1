@@ -1,3 +1,5 @@
+package lk.ijse.gdse66.model.api;
+
 import jakarta.json.*;
 
 import javax.servlet.ServletException;
