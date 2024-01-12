@@ -17,6 +17,51 @@ import java.sql.*;
     public class Hello_Servlt extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+//        // using Json-p libery
+//        JsonReader reader = Json.createReader(req.getReader());
+//        JsonObject jsonObject = reader.readObject();
+////        System.out.println(jsonObject);
+//
+////
+////        String id = jsonObject.getString("id");
+////        String name = jsonObject.getString("name");
+////        JsonObject address = jsonObject.getJsonObject("address");
+////
+////        int no = address.getInt("no");
+////        String street = address.getString("street");
+////        String city = address.getString("city");
+////
+////        JsonArray contacts = jsonObject.getJsonArray("contacts");
+////        String fisrtcontact = contacts.getString(0);
+////        String secondcontact = contacts.getString(1);
+////
+////        System.out.println(id);
+////        System.out.println(name);
+////        System.out.println(address);
+////        System.out.println("no"+no+ "street"+ street + "city" + city);
+////        System.out.println("fisrt Conatct " + fisrtcontact);
+////        System.out.println("second Conatct " + secondcontact);
+//
+//        JsonObjectBuilder objectBuilder = Json.createObjectBuilder();
+//        objectBuilder.add("id" , "C001");
+//        objectBuilder.add("name" ,"kamal");
+//
+//        JsonObjectBuilder addressBuilder = Json.createObjectBuilder();
+//        addressBuilder.add("no",81);
+//        addressBuilder.add("Street" , "Sinhasana Road");
+//        addressBuilder.add("city","matara");
+//
+//        objectBuilder.add("address",addressBuilder);
+//
+//        JsonArrayBuilder contactarrayBuilder = Json.createArrayBuilder();
+//        contactarrayBuilder.add("011-2221208");
+//        contactarrayBuilder.add("011-2221208");
+//
+//        objectBuilder.add("contacts" , contactarrayBuilder);
+//
+//        resp.getWriter().write(objectBuilder.build().toString());
+//
         JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
 
         try {
@@ -106,11 +151,66 @@ import java.sql.*;
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Connection connection = null;
 
         String id = req.getParameter("id");
+
+        System.out.printf("id=%s\n", id);
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gdse66_hello", "root", "1234");
+            PreparedStatement stn = connection.prepareStatement("DELETE FROM customer WHERE id=?");
+
+            stn.setString(1, id);
+            stn.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Connection connection = null;
+        String id = req.getParameter("id");
         String name = req.getParameter("name");
         String address = req.getParameter("address");
+
+
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection =   DriverManager.getConnection("jdbc:mysql://localhost:3306/gdse66_hello","root","1234");
+            PreparedStatement stn = connection.prepareStatement(" UPDATE customer SET name=?,address=? WHERE id=?");
+
+
+            stn.setString(1,name);
+            stn.setString(2,address);
+            stn.setString(3,id);
+
+            stn.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }finally {
+            if(connection !=null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 }
