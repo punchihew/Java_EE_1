@@ -173,7 +173,7 @@ import java.sql.*;
             PreparedStatement stn = connection.prepareStatement("DELETE FROM customer WHERE id=?");
 
             stn.setString(1, id);
-            if(stn.executeUpdate()>0){
+            if(stn.executeUpdate() != 0){
                 resp.setStatus(204,"Customer Deleted..!!");
                 resp.getWriter().write("Customer Save Successfull");
             }{
