@@ -1,9 +1,9 @@
-package lk.ijse.gdse66.api;
+package lk.ijse.gdse66.api.hello.api;
 
 
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
-import lk.ijse.gdse66.model.Student;
+import lk.ijse.gdse66.api.hello.model.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

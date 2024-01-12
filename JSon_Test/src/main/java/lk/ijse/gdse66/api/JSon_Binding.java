@@ -1,4 +1,6 @@
 package lk.ijse.gdse66.api;
 
-public class JSon_Binding {
+import javax.servlet.http.HttpServlet;
+
+public class JSon_Binding extends HttpServlet {
 }

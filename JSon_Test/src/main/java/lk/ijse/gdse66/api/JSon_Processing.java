@@ -94,6 +94,10 @@ import java.sql.*;
         String name = req.getParameter("name");
         String address = req.getParameter("address");
 
+        if (id==null || !id.matches("C\\d{3}")){
+            resp.getWriter().write("id is empty or id is invalid");
+        }
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gdse66_hello", "root", "1234");
@@ -103,7 +107,13 @@ import java.sql.*;
             stn.setString(2,name);
             stn.setString(3,address);
 
-            stn.executeUpdate();
+
+            if(stn.executeUpdate()>0){
+                resp.getWriter().write("Customer Save Successfull");
+            }{
+                resp.getWriter().write("Fail To Save Customer");
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
