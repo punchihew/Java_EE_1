@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.model.model;
+package lk.ijse.gdse66.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
