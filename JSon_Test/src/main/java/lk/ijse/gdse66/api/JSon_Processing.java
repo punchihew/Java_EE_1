@@ -208,7 +208,13 @@ import java.sql.*;
             stn.setString(2,address);
             stn.setString(3,id);
 
-            stn.executeUpdate();
+
+
+            if(stn.executeUpdate()>0){
+                resp.getWriter().write("Customer Save Successfull");
+            }{
+                resp.getWriter().write("Fail To Save Customer");
+            }
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
