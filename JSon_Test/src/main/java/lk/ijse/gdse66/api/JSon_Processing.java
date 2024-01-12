@@ -14,7 +14,7 @@ import java.sql.*;
 //@WebServlet(name = "Hello_servlet" , value = "/" , loadOnStartup = 1)
 
 @WebServlet(urlPatterns = "/test")
-    public class Hello_Servlt extends HttpServlet {
+    public class JSon_Processing extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
