@@ -211,6 +211,7 @@ import java.sql.*;
 
 
             if(stn.executeUpdate()>0){
+                resp.setStatus(200,"Customer Saved");
                 resp.getWriter().write("Customer Save Successfull");
             }{
                 resp.getWriter().write("Fail To Save Customer");
