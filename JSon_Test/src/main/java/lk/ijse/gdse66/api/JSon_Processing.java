@@ -95,6 +95,11 @@ import java.sql.*;
         String address = req.getParameter("address");
 
         if (id==null || !id.matches("C\\d{3}")){
+//            resp.sendError();
+            resp.getWriter().write("id is empty or id is invalid");
+        }else if (name == null || name.matches("[A-Za-z]+")){
+            resp.getWriter().write("id is empty or id is invalid");
+        }else if (address== null ){
             resp.getWriter().write("id is empty or id is invalid");
         }
 
