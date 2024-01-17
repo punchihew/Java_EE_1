@@ -33,8 +33,8 @@ public class Customer extends HttpServlet {
 //        Jsonb jsonb = JsonbBuilder.create();
 
 
-//        String json = jsonb.toJson(student);
-//        resp.getWriter().write(json);
+        String json = jsonb.toJson(student);
+        resp.getWriter().write(json);
 
 //        jsonb.toJson(students,resp.getWriter());
 

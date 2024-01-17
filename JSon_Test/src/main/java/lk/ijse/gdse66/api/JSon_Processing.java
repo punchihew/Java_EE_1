@@ -84,7 +84,20 @@ import java.sql.*;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+
+        //apita ona widihata get karagnna methoad customize karagnna
+//        String action = req.getParameter("action");
+//        if (action==null){
+//            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"action is emplty");
+//            System.out.println("action is not avaible");
+//        }
+//        if (action.equalsIgnoreCase("GETALL")){
+//            GettallCustomer();
+//        }else if (action.equalsIgnoreCase("GETONE")){
+//            getCustomerbyId();
+//        }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
