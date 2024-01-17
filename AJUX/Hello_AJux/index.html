@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello_Ajax</title>
+
+
 </head>
 <body>
+<h1>Hello AJAX </h1>
+<h4>let is implement AJAX with XMALHttpRequest object</h4>
+<button id="btn1" type="button">Send Me AJUX </button>
+<button id="btn2" type="button">Send Me</button>
 
+<script src="src/main/resources/resoures/code.jquery.com_jquery-3.7.1.min.js"></script>
+<script>
+    //AJAX request
+
+    $('#btn1').click(function (){
+        let xhr = new XMLHttpRequest();
+        console.log(xhr.readyState,"After Creating XMALHttpRequest object");
+
+        xhr.open("get","Data/data.json")
+        console.log(xhr.readyState,"After Opening Request");
+
+        xhr.addEventListener("readystatechange",()=>{
+            if (xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+            }
+            console.log(xhr.readyState,"ready stats change")
+
+            let dic = $('<div>');
+            dic.text(xhr.responseText);
+            $('body').append(dic);
+        })
+
+        xhr.send();
+        console.log(xhr.readyState,"After Sending Request");
+
+
+
+    });
+    $('#btn2').click(function (){
+        $.ajax({
+            url : "Data/data.json",
+            method : "GET",
+            success : function (resp){
+                console.log("success"+resp)
+            },
+            error : function (error){
+                console.log("error : " + error);
+            }
+        })
+    });
+
+</script>
 </body>
 </html>
