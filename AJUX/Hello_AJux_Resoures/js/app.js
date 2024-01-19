@@ -63,6 +63,7 @@ $('#btnDelete').click(function () {
         method: "DELETE",
         success: function (resp) {
             console.log("success: ", resp);
+
         },
         error: function (error) {
             console.log("error: ", error);
@@ -71,3 +72,25 @@ $('#btnDelete').click(function () {
     })
 
 });
+$('#btnUpdate').click(function () {
+
+    const id = $('#txt-id').val();
+    const name = $('#txt-name').val();
+    const address = $('#txt-address').val();
+
+    $.ajax({
+        url: "http://localhost:8080/app/customers",
+        method: "DELETE",
+
+        success: function (resp, textStatus, json) {
+            console.log("success resp: ", resp);
+            console.log("success textStatus: ", textStatus);
+            console.log("success: json ", json);
+        },
+        error: function (error) {
+            console.log("error: ", error);
+        }
+    })
+
+});
+
