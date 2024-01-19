@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"></script>
+  <script src="src/main/resources/resources/code.jquery.com_jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body>
@@ -48,10 +50,10 @@
 
 
           <div class="d-grid gap-2 d-md-flex justify-content-md-end my-4">
-            <button class="btn btn-outline-primary" type="button">Save</button>
-            <button class="btn btn-outline-primary" type="button">Update</button>
-            <button class="btn btn-outline-primary" type="button">Delete</button>
-            <button class="btn btn-outline-primary" type="button">Get All</button>
+            <button class="btn btn-outline-primary" type="button" id="btnSave">Save</button>
+            <button class="btn btn-outline-primary" type="button" id="btnUpdate">Update</button>
+            <button class="btn btn-outline-primary" type="button" id="btnDelete">Delete</button>
+            <button class="btn btn-outline-primary" type="button" id="btnGetAll">Get All</button>
           </div>
 
         </form>
@@ -71,13 +73,13 @@
         <table class="table  mt-5 col-10 col-sm-5 col-md-4 col-lg-5 col-xl-4  col-xxl-4">
           <thead>
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
+            <th scope="col" id="txt-id">ID</th>
+            <th scope="col" id="txt-name">Name</th>
+            <th scope="col" id="txt-address">Address</th>
 
           </tr>
           </thead>
-          <tbody>
+          <tbody id="body">
 
           </tbody>
         </table>
@@ -90,6 +92,8 @@
     <div class="col-1"></div>
 
   </div>
+
+  <script src="js/app.js"></script>
 
 </section>
 
