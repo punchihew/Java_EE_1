@@ -41,14 +41,23 @@
 
     });
     $('#btn2').click(function (){
+
         $.ajax({
-            url : "Data/data.json",
+            url : "data/data.json",
             method : "GET",
-            success : function (resp){
-                console.log("success"+resp)
+            /*async: false,*/
+            success : function (resp) {
+                console.log("Success" , resp)
+                console.log("id: " , resp.id);
+                console.log("name: " , resp.name);
+                console.log("address: " , resp.address);
+
+                let divElm = $('<div>');
+                divElm.text("id: " + resp.id + ", name: " + resp.name + ", address: " + resp.address);
+                $('body').append(divElm);
             },
-            error : function (error){
-                console.log("error : " + error);
+            error : function (error) {
+                console.log("error: " , error);
             }
         })
     });
