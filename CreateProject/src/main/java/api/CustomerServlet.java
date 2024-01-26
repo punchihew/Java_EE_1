@@ -18,8 +18,7 @@ public class CustomerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext sc = getServletContext();
         BasicDataSource dbcp = (BasicDataSource) sc.getAttribute("dbcp");
-        try {
-            Connection connection = dbcp.getConnection();
+        try(Connection connection = dbcp.getConnection()) {
             System.out.println(connection);
         } catch (SQLException e) {
             e.printStackTrace();
