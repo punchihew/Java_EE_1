@@ -221,7 +221,7 @@ $('#btnItemGetAll').on("click",function () {
 $('#btnSaveItem').click(function () {
 
 
-    const ItemCode = $('#itemCodeTxt').val();
+    const ItemCode = $('#cc').val();
     const ItemName = $('#itemNameTxt').val();
     const ItemPrice = $('#unitePriceTxt').val();
     const ItemQty = $('#itemQtyTxt').val();

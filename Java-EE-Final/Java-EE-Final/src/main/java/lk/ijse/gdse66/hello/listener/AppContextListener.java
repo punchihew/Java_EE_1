@@ -16,7 +16,7 @@ public class AppContextListener implements ServletContextListener {
 
         BasicDataSource dbcp = new BasicDataSource(); //create a connection pool
         dbcp.setUsername("root");
-        dbcp.setPassword("12345");
+        dbcp.setPassword("1234");
         dbcp.setUrl("jdbc:mysql://localhost:3306/thogakade");
         dbcp.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dbcp.setInitialSize(2);

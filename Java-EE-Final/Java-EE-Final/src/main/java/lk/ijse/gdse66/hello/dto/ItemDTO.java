@@ -1,68 +1,63 @@
 package lk.ijse.gdse66.hello.dto;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
-/**
- * @author : Sanu Vithanage
- * @since : 0.1.0
- **/
 
 public class ItemDTO implements Serializable {
-    private String code;
-    private String description;
-    private BigDecimal unitPrice;
-    private int qtyOnHand;
+
+    private String ItemCode;
+    private String ItemName;
+    private double ItemPrice;
+    private int ItemQty;
+
+    public ItemDTO(String itemCode, String itemName,  double itemPrice, int itemQty) {
+        ItemCode = itemCode;
+        ItemName = itemName;
+        ItemQty = itemQty;
+        ItemPrice = itemPrice;
+    }
 
     public ItemDTO() {
     }
 
-    public ItemDTO(String code, String description, BigDecimal unitPrice, int qtyOnHand) {
-        this.code = code;
-        this.description = description;
-        this.unitPrice = unitPrice;
-        this.qtyOnHand = qtyOnHand;
+    public String getItemCode() {
+        return ItemCode;
     }
 
-    public String getCode() {
-        return code;
+    public void setItemCode(String itemCode) {
+        ItemCode = itemCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getItemName() {
+        return ItemName;
     }
 
-    public String getDescription() {
-        return description;
+    public void setItemName(String itemName) {
+        ItemName = itemName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public int getItemQty() {
+        return ItemQty;
     }
 
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
+    public void setItemQty(int itemQty) {
+        ItemQty = itemQty;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
+    public double getItemPrice() {
+        return ItemPrice;
     }
 
-    public int getQtyOnHand() {
-        return qtyOnHand;
-    }
-
-    public void setQtyOnHand(int qtyOnHand) {
-        this.qtyOnHand = qtyOnHand;
+    public void setItemPrice(double itemPrice) {
+        ItemPrice = itemPrice;
     }
 
     @Override
     public String toString() {
-        return "ItemTM{" +
-                "code='" + code + '\'' +
-                ", description='" + description + '\'' +
-                ", unitPrice=" + unitPrice +
-                ", qtyOnHand=" + qtyOnHand +
+        return "Item{" +
+                "ItemCode='" + ItemCode + '\'' +
+                ", ItemName='" + ItemName + '\'' +
+                ", ItemQty=" + ItemQty +
+                ", ItemPrice=" + ItemPrice +
                 '}';
     }
 }

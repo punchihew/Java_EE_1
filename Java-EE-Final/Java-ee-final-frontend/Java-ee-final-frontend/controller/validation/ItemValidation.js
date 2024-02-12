@@ -19,84 +19,86 @@ var validationQTY;
 //     $("#itemCode").val(itemCode);
 // }
 
-function clearItemInputFields() {
-    $("#itemCode,#itemName,#itemPrice,#itemQty").val("");
-    $("#itemCode,#itemName,#itemPrice,#itemQty").css("border", "1px solid #ced4da");
-    $("#itemCode").focus();
-}
+// function clearItemInputFields() {
+//     $("#itemCode,#itemName,#itemPrice,#itemQty").val("");
+//     $("#itemCode,#itemName,#itemPrice,#itemQty").css("border", "1px solid #ced4da");
+//     $("#itemCode").focus();
+// }
 
 
-$("#btnItemAdd").attr('disabled',true);
-$("#btnItemUpdate").attr('disabled',true);
+$("#btnSaveItem").attr('disabled',true);
+$("#btnUpdateItem").attr('disabled',true);
 
-$("#itemCode").keyup(function (e) {
-    let value = $("#itemCode").val();
+$("#itemCodeTxt").keyup(function (e) {
+    let value = $("#itemCodeTxt").val();
     if (value.length == 1) {
-        $("#btnItemAdd").attr('disabled',true);
-        $("#itemCode").css('border', '1px solid #ced4da');
+        $("#btnSaveItem").attr('disabled',true);
+        $("#itemCodeTxt").css('border', '1px solid #ced4da');
     } else {
         let res = ITEM_ID_REGEX.test(value);
         if (res) {
             validationId =1;
             setBtn();
-            $("#itemCode").css('border', '2px solid green');
+            $("#itemCodeTxt").css('border', '2px solid green');
         } else {
-            $("#itemCode").css('border', '2px solid red');
+            $("#itemCodeTxt").css('border', '2px solid red');
         }
     }});
 
-$("#itemName").keyup(function (e) {
-    let value = $("#itemName").val();
+$("#itemNameTxt").keyup(function (e) {
+    let value = $("#itemNameTxt").val();
     if (value.length == 0) {
-        $("#btnItemAdd").attr('disabled',true);
-        $("#itemName").css('border', '1px solid #ced4da');
+        $("#btnSaveItem").attr('disabled',true);
+        $("#itemNameTxt").css('border', '1px solid #ced4da');
     } else {
         let res = ITEM_NAME_REGEX.test(value);
         if (res) {
             validationName=1;
             setBtn();
-            $("#itemName").css('border', '2px solid green');
+            $("#itemNameTxt").css('border', '2px solid green');
         } else {
-            $("#itemName").css('border', '2px solid red');
+            $("#itemNameTxt").css('border', '2px solid red');
         }
     }});
 
-$("#itemPrice").keyup(function (e) {
-    let value = $("#itemPrice").val();
+$("#unitePriceTxt").keyup(function (e) {
+    let value = $("#unitePriceTxt").val();
     if (value.length == 0) {
-        $("#btnItemAdd").attr('disabled',true);
-        $("#itemPrice").css('border', '1px solid #ced4da');
+        $("#btnSaveItem").attr('disabled',true);
+        $("#unitePriceTxt").css('border', '1px solid #ced4da');
     } else {
         let res = ITEM_SALARY_REGEX.test(value);
         if (res) {
             validationPrice=1;
             setBtn();
-            $("#itemPrice").css('border', '2px solid green');
+            $("#unitePriceTxt").css('border', '2px solid green');
         } else {
-            $("#itemPrice").css('border', '2px solid red');
+            $("#unitePriceTxt").css('border', '2px solid red');
         }
     }});
 
-$("#itemQty").keyup(function (e) {
-    let value = $("#itemQty").val();
+$("#itemQtyTxt").keyup(function (e) {
+    let value = $("#itemQtyTxt").val();
     if (value.length == 0) {
-        $("#btnItemAdd").attr('disabled',true);
-        $("#itemQty").css('border', '1px solid #ced4da');
+        $("#btnSaveItem").attr('disabled',true);
+        $("#itemQtyTxt").css('border', '1px solid #ced4da');
     } else {
         let res = numbersOnlyRegex.test(value);
         if (res) {
             validationQTY=1;
             setBtn();
-            $("#itemQty").css('border', '2px solid green');
+            $("#btnSaveItem").attr('disabled',false);
+            $("#btnUpdateItem").attr('disabled',false);
+            $("#itemQtyTxt").css('border', '2px solid green');
         } else {
-            $("#itemQty").css('border', '2px solid red');
+            $("#itemQtyTxt").css('border', '2px solid red');
         }
     }});
 
 
 function setBtn() {
     if (validationId==1 && validationName==1 && validationPrice==1 && validationQTY==1){
-        $("#btnItemAdd").attr('disabled',false);
-        $("#btnItemUpdate").attr('disabled',false);
+        $("#btnSaveItem").attr('disabled',false);
+        $("#btnUpdateItem").attr('disabled',false);
     }
 }

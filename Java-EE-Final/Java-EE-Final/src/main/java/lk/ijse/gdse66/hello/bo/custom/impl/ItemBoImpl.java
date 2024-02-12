@@ -14,12 +14,13 @@ import java.util.ArrayList;
 public class ItemBoImpl implements ItemBO {
 
     ItemDAO itemDAO = (ItemDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.ITEM);
+
     @Override
     public ArrayList<ItemDTO> getAllItems(Connection connection) throws SQLException, ClassNotFoundException {
         ArrayList<ItemDTO> allItems= new ArrayList<>();
         ArrayList<Item> all = itemDAO.getAll(connection);
         for (Item c : all) {
-            allItems.add(new ItemDTO(c.getItemCode(),c.getItemName(),c.getItemPrice(),c.getItemQty()));
+            allItems.add(new ItemDTO(c.getCode(),c.getDescription(),c.getUnitPrice(),c.getQtyOnHand()));
         }
         return allItems;
     }

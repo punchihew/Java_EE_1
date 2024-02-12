@@ -1,21 +1,15 @@
 package lk.ijse.gdse66.hello.dao;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CrudDAO<T, ID> extends SuperDAO{
-    ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
+public interface CrudDao<T> extends SuperDAO {
+    public ArrayList<T> getAll(Connection connection) throws SQLException, ClassNotFoundException;
 
-    boolean save(T dto) throws SQLException, ClassNotFoundException;
+    public boolean save(Connection connection,T entity) throws SQLException, ClassNotFoundException;
 
-    boolean update(T dto) throws SQLException, ClassNotFoundException;
+    public boolean update(Connection connection,T entity) throws SQLException, ClassNotFoundException;
 
-    boolean exist(ID id) throws SQLException, ClassNotFoundException;
-
-    boolean delete(ID id) throws SQLException, ClassNotFoundException;
-
-    String generateNewID() throws SQLException, ClassNotFoundException;
-
-    T search(ID id) throws SQLException, ClassNotFoundException;
-
+    public boolean delete(Connection connection ,String Id) throws SQLException, ClassNotFoundException;
 }

@@ -12,6 +12,26 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderDAOImpl implements OrderDAO {
+//    @Override
+//    public ArrayList<Orders> getAll(Connection connection) throws SQLException, ClassNotFoundException {
+//
+//    }
+//
+//    @Override
+//    public boolean save(Connection connection, Orders entity) throws SQLException, ClassNotFoundException {
+//        return SQLUtil.execute(connection,"INSERT INTO Orders VALUES (?,?,?)",entity.getOrderID(), entity.getDate(),entity.getCustomerID());
+//    }
+//
+//    @Override
+//    public boolean update(Connection connection, Orders entity) throws SQLException, ClassNotFoundException {
+//        return false;
+//    }
+//
+//    @Override
+//    public boolean delete(Connection connection, String Id) throws SQLException, ClassNotFoundException {
+//        return false;
+//    }
+
     @Override
     public ArrayList<Orders> getAll(Connection connection) throws SQLException, ClassNotFoundException {
         ArrayList<Orders> allOrders = new ArrayList<>();
@@ -24,11 +44,6 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public boolean save(Connection connection, Orders entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute(connection,"INSERT INTO Orders VALUES (?,?,?)",entity.getOrderID(), entity.getDate(),entity.getCustomerID());
-    }
-
-    @Override
     public boolean update(Connection connection, Orders entity) throws SQLException, ClassNotFoundException {
         return false;
     }
@@ -36,5 +51,10 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public boolean delete(Connection connection, String Id) throws SQLException, ClassNotFoundException {
         return false;
+    }
+
+    @Override
+    public boolean save(Connection connection, Orders entity) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(connection,"INSERT INTO Orders VALUES (?,?,?)",entity.getOrderID(), entity.getDate(),entity.getCustomerID());
     }
 }

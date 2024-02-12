@@ -1,6 +1,8 @@
 package lk.ijse.gdse66.hello.bo;
 
 import lk.ijse.gdse66.hello.bo.custom.impl.CustomerBoImpl;
+import lk.ijse.gdse66.hello.bo.custom.impl.ItemBoImpl;
+import lk.ijse.gdse66.hello.bo.custom.impl.PurchaseOrderBOImpl;
 
 public class BoFactory {
     private static BoFactory boFactory;
@@ -12,7 +14,7 @@ public class BoFactory {
     }
 
     public enum BOTypes{
-        CUSTOMER
+        CUSTOMER,ITEM,PO
     }
 
     //Object creation logic for BO objects
@@ -20,13 +22,15 @@ public class BoFactory {
         switch (types){
             case CUSTOMER:
                 return new CustomerBoImpl();
-//            case ITEM:
-//                return new ItemBOImpl();
-//            case PO:
-//                return new PurchaseOrderBOImpl();
+            case ITEM:
+                return new ItemBoImpl();
+            case PO:
+                return new PurchaseOrderBOImpl();
             default:
-                return null;
-        }
+                return null;        }
     }
+
+
+
 
 }
